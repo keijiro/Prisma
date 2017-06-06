@@ -1,0 +1,42 @@
+// Cloner - An example of use of procedural instancing.
+// https://github.com/keijiro/Cloner
+
+#pragma kernel ClonerUpdate
+
+#include "UnityCG.cginc"
+#include "SimplexNoise3D.cginc"
+
+StructuredBuffer<float4> PositionBuffer;
+StructuredBuffer<float4> NormalBuffer;
+StructuredBuffer<float4> TangentBuffer;
+RWStructuredBuffer<float4> TransformBuffer;
+
+CBUFFER_START(Params)
+    uint InstanceCount;
+    float BaseScale;
+    float ScaleNoise;
+    float NoiseFrequency;
+    float3 NoiseOffset;
+    float NormalModifier;
+CBUFFER_END
+
+[numthreads(64, 1, 1)]
+void ClonerUpdate(uint id : SV_DispatchThreadID)
+{
+    float3 p = PositionBuffer[id].xyz;
+    float3 n = NormalBuffer[id].xyz;
+    float4 t = TangentBuffer[id];
+
+    float4 sn1 = snoise(98.4898 + p * NoiseFrequency + NoiseOffset);
+    float4 sn2 = snoise( 1.2278 - p * NoiseFrequency + NoiseOffset);
+    float3 dfn = cross(sn1.xyz, sn2.xyz);
+
+    float3 rz = normalize(n + dfn * NormalModifier);
+    float3 ry = normalize(cross(rz, t.xyz) * t.w);
+    float3 rx = cross(rz, ry);
+    float s = max(0, BaseScale + sn1.w * ScaleNoise);
+
+    TransformBuffer[id + InstanceCount * 0] = float4(p, s);
+    TransformBuffer[id + InstanceCount * 1] = float4(rx, sn1.w);
+    TransformBuffer[id + InstanceCount * 2] = float4(ry, sn2.w);
+}
