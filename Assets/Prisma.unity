@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &390130555
 Light:
   m_ObjectHideFlags: 0
@@ -1623,12 +1623,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4095c3c8303e42855615d4fb080a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 8400000, guid: 546579a5774af6e46b28eb5f418d4004, type: 2}
-  _tint: {r: 1, g: 1, b: 1, a: 1}
+  _sourceTexture: {fileID: 8400000, guid: 546579a5774af6e46b28eb5f418d4004, type: 2}
   _scale: {x: 1, y: 1}
   _offset: {x: 0, y: 0}
-  _test: 0
+  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  _ditherAmount: 0
   _shader: {fileID: 4800000, guid: fc06530583feedc4b963638b57edf1b7, type: 3}
+  _noiseTexture0: {fileID: 2800000, guid: 54e927921bf413449ab92658c66621f3, type: 3}
+  _noiseTexture1: {fileID: 2800000, guid: e9e222302422c84489e6b82f98f5fcce, type: 3}
+  _noiseTexture2: {fileID: 2800000, guid: 85e8f395918d6f545aa8e034498ee11d, type: 3}
+  _noiseTexture3: {fileID: 2800000, guid: f1011ff9c89abe848ae5b1ed9f046423, type: 3}
+  _noiseTexture4: {fileID: 2800000, guid: e15eddafd9203664d873551576a397cd, type: 3}
+  _noiseTexture5: {fileID: 2800000, guid: a51aa3e268a785a4da69c424348618db, type: 3}
+  _noiseTexture6: {fileID: 2800000, guid: 9a74efd7c2b0d974e8aefe3b7ebba3e0, type: 3}
+  _noiseTexture7: {fileID: 2800000, guid: 940d3f17eef70954eb435f9a50c7af92, type: 3}
 --- !u!1 &1255059149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +1989,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 2147483615
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 8400000, guid: 847b7e8511b6e454c86a6b84397f298c, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -2132,12 +2140,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4095c3c8303e42855615d4fb080a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 8400000, guid: 847b7e8511b6e454c86a6b84397f298c, type: 2}
-  _tint: {r: 1, g: 1, b: 1, a: 1}
+  _sourceTexture: {fileID: 8400000, guid: 847b7e8511b6e454c86a6b84397f298c, type: 2}
   _scale: {x: 1, y: 1}
   _offset: {x: 0, y: 0}
-  _test: 0
+  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  _ditherAmount: 3
   _shader: {fileID: 4800000, guid: fc06530583feedc4b963638b57edf1b7, type: 3}
+  _noiseTexture0: {fileID: 2800000, guid: 54e927921bf413449ab92658c66621f3, type: 3}
+  _noiseTexture1: {fileID: 2800000, guid: e9e222302422c84489e6b82f98f5fcce, type: 3}
+  _noiseTexture2: {fileID: 2800000, guid: 85e8f395918d6f545aa8e034498ee11d, type: 3}
+  _noiseTexture3: {fileID: 2800000, guid: f1011ff9c89abe848ae5b1ed9f046423, type: 3}
+  _noiseTexture4: {fileID: 2800000, guid: e15eddafd9203664d873551576a397cd, type: 3}
+  _noiseTexture5: {fileID: 2800000, guid: a51aa3e268a785a4da69c424348618db, type: 3}
+  _noiseTexture6: {fileID: 2800000, guid: 9a74efd7c2b0d974e8aefe3b7ebba3e0, type: 3}
+  _noiseTexture7: {fileID: 2800000, guid: 940d3f17eef70954eb435f9a50c7af92, type: 3}
 --- !u!1 &1514116709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,12 +5689,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4095c3c8303e42855615d4fb080a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 8400000, guid: 546579a5774af6e46b28eb5f418d4004, type: 2}
-  _tint: {r: 1, g: 1, b: 1, a: 1}
+  _sourceTexture: {fileID: 0}
   _scale: {x: 1, y: 1}
   _offset: {x: 0, y: 0}
-  _test: 0
+  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  _ditherAmount: 0
   _shader: {fileID: 4800000, guid: fc06530583feedc4b963638b57edf1b7, type: 3}
+  _noiseTexture0: {fileID: 0}
+  _noiseTexture1: {fileID: 0}
+  _noiseTexture2: {fileID: 0}
+  _noiseTexture3: {fileID: 0}
+  _noiseTexture4: {fileID: 0}
+  _noiseTexture5: {fileID: 0}
+  _noiseTexture6: {fileID: 0}
+  _noiseTexture7: {fileID: 0}
 --- !u!1 &2144740326
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,20 @@
 fileFormatVersion: 2
 guid: 19d4095c3c8303e42855615d4fb080a8
-timeCreated: 1495594826
+timeCreated: 1496847477
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - _sourceTexture: {instanceID: 0}
+  - _source: {instanceID: 0}
   - _shader: {fileID: 4800000, guid: fc06530583feedc4b963638b57edf1b7, type: 3}
+  - _noiseTexture0: {fileID: 2800000, guid: 54e927921bf413449ab92658c66621f3, type: 3}
+  - _noiseTexture1: {fileID: 2800000, guid: e9e222302422c84489e6b82f98f5fcce, type: 3}
+  - _noiseTexture2: {fileID: 2800000, guid: 85e8f395918d6f545aa8e034498ee11d, type: 3}
+  - _noiseTexture3: {fileID: 2800000, guid: f1011ff9c89abe848ae5b1ed9f046423, type: 3}
+  - _noiseTexture4: {fileID: 2800000, guid: e15eddafd9203664d873551576a397cd, type: 3}
+  - _noiseTexture5: {fileID: 2800000, guid: a51aa3e268a785a4da69c424348618db, type: 3}
+  - _noiseTexture6: {fileID: 2800000, guid: 9a74efd7c2b0d974e8aefe3b7ebba3e0, type: 3}
+  - _noiseTexture7: {fileID: 2800000, guid: 940d3f17eef70954eb435f9a50c7af92, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -4,6 +4,7 @@
     {
         _MainTex("", 2D) = "white" {}
         _Color("", Color) = (1, 1, 1, 1)
+        _NoiseTex("", 2D) = "black" {}
     }
 
     CGINCLUDE
@@ -12,9 +13,14 @@
 
     sampler2D _MainTex;
     float4 _MainTex_TexelSize;
+
+    sampler2D _NoiseTex;
+    float4 _NoiseTex_TexelSize;
+
     half4 _Color;
     float2 _Scale;
     float2 _Offset;
+    half _DitherAmount;
 
     half UVMask(float2 uv)
     {
@@ -24,25 +30,26 @@
     half4 frag_blit(v2f_img i) : SV_Target
     {
         float2 uv = i.uv * _Scale + _Offset;
-        return tex2D(_MainTex, uv) * UVMask(uv) * _Color;
+        half3 src = tex2D(_MainTex, uv).rgb * UVMask(uv) * _Color;
+
+        return half4(src, 1);
     }
 
-    half4 frag_test(v2f_img i) : SV_Target
+    half4 frag_blit_dither(v2f_img i) : SV_Target
     {
         float2 uv = i.uv * _Scale + _Offset;
-        float mask = UVMask(uv);
+        half3 src = tex2D(_MainTex, uv).rgb * UVMask(uv) * _Color;
 
-        float2 norm = float2(1, _MainTex_TexelSize.x * _MainTex_TexelSize.w);
-        float2 grid_uv = abs(0.5 - frac(uv * norm * 20));
-        grid_uv = (grid_uv - 0.48) * _ScreenParams.x / 20;
-        float grid = max(grid_uv.x, grid_uv.y);
+        uv = i.uv * _ScreenParams.xy * _NoiseTex_TexelSize.xy;
+        float dither = tex2D(_NoiseTex, uv).a;
 
-        float2 circ_uv = (uv - 0.5) * 5 * norm;
-        float c = GammaToLinearSpace(circ_uv.x / 2 + 0.5);
-        c = lerp(c, 0.5, abs(circ_uv.y) > 0.2);
-        c = lerp(c, grid, length(circ_uv) > 1);
+        dither = mad(dither, 2, -1);
+        dither = sign(dither) * (1 - sqrt(1 - abs(dither)));
+        dither *= _DitherAmount / 255;
 
-        return half4(lerp(half3(1, 0, 0), c, mask), 1);
+        src = GammaToLinearSpace(LinearToGammaSpace(src) + dither);
+
+        return half4(src, 1);
     }
 
     ENDCG
@@ -61,7 +68,7 @@
         {
             CGPROGRAM
             #pragma vertex vert_img
-            #pragma fragment frag_test
+            #pragma fragment frag_blit_dither
             ENDCG
         }
     }
