@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0}
-  m_AmbientEquatorColor: {r: 0, g: 0, b: 0, a: 0}
-  m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_AmbientSkyColor: {r: 0.08650518, g: 0.08671996, b: 0.11764705, a: 0}
+  m_AmbientEquatorColor: {r: 0.07352942, g: 0.07159051, b: 0.06812285, a: 0}
+  m_AmbientGroundColor: {r: 0.16176468, g: 0.16176468, b: 0.16176468, a: 0}
   m_AmbientIntensity: 0
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -343,8 +343,9 @@ Transform:
   m_Children:
   - {fileID: 1071610050}
   - {fileID: 437518086}
+  - {fileID: 685274239}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330282732
 MonoBehaviour:
@@ -545,7 +546,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.9117647, g: 0.9306288, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.4
   m_Range: 14
   m_SpotAngle: 40
@@ -600,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437518086
 Transform:
   m_ObjectHideFlags: 0
@@ -823,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &662109188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685274237
 GameObject:
@@ -896,12 +897,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 768
   _template: {fileID: 11400000, guid: c0c00b345c4a1394bbcee4f57b92d0c4, type: 2}
-  _radius: 0.0125
+  _radius: 0.01
   _length: 1.5
   _spread: 1.2
   _noiseFrequency: 0.5
   _noiseMotion: {x: 0, y: 0, z: 0.1}
-  _material: {fileID: 2100000, guid: 1a54276e5db00e748a8ee8f5a6327510, type: 2}
+  _material: {fileID: 2100000, guid: 4df5f9416c6409d499c45b25adb1f007, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
   _randomSeed: 100
   _compute: {fileID: 7200000, guid: 70e8fc98ef3d1974485d153a4e66dbcc, type: 3}
@@ -912,11 +913,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 685274237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 0, y: 1.488, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
-  m_Father: {fileID: 1071610050}
-  m_RootOrder: 1
+  m_Father: {fileID: 330282731}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686565455
 GameObject:
@@ -933,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &686565456
 Transform:
   m_ObjectHideFlags: 0
@@ -1261,7 +1262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &833565841
 Transform:
   m_ObjectHideFlags: 0
@@ -1843,7 +1844,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.9117647, g: 0.9306288, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.4
   m_Range: 14
   m_SpotAngle: 40
@@ -1921,7 +1922,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.9979716, b: 0.9264706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.3
   m_Range: 5.5
   m_SpotAngle: 30
@@ -5339,7 +5340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1822468308
 Transform:
   m_ObjectHideFlags: 0
@@ -5400,11 +5401,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870618529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 0, y: 1.488, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
-  m_Father: {fileID: 1948507177}
-  m_RootOrder: 1
+  m_Father: {fileID: 2144740327}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1870618532
 MonoBehaviour:
@@ -5419,7 +5420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 768
   _template: {fileID: 11400000, guid: c0c00b345c4a1394bbcee4f57b92d0c4, type: 2}
-  _radius: 0.0125
+  _radius: 0.01
   _length: 1.5
   _spread: 1.2
   _noiseFrequency: 0.5
@@ -5731,8 +5732,9 @@ Transform:
   m_Children:
   - {fileID: 1948507177}
   - {fileID: 1822468308}
+  - {fileID: 1870618530}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2144740328
 MonoBehaviour:
