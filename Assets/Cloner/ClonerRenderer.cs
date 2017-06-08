@@ -6,7 +6,6 @@ using Klak.Chromatics;
 
 namespace Cloner
 {
-    [ExecuteInEditMode]
     public sealed class ClonerRenderer : MonoBehaviour
     {
         #region Point source properties
@@ -85,7 +84,7 @@ namespace Cloner
 
         #endregion
 
-        #region Material properties
+        #region Misc properties
 
         [SerializeField] int _randomSeed;
 
@@ -139,7 +138,7 @@ namespace Cloner
 
         #region MonoBehaviour functions
 
-        void OnEnable()
+        void Start()
         {
             // Initialize the indirect draw args buffer.
             _drawArgsBuffer = new ComputeBuffer(
@@ -156,36 +155,34 @@ namespace Cloner
             _tangentBuffer = _pointSource.CreateTangentBuffer();
             _transformBuffer = new ComputeBuffer(InstanceCount, 3 * 4 * 4);
 
-            if (_props == null)
-            {
-                // This property block is used only for avoiding an instancing bug.
-                _props = new MaterialPropertyBlock();
-                _props.SetFloat("_UniqueID", Random.value);
-            }
+            // This property block is used only for avoiding an instancing bug.
+            _props = new MaterialPropertyBlock();
+            _props.SetFloat("_UniqueID", Random.value);
 
             // Initial noise offset = random seed
             _noiseOffset = Vector3.one * _randomSeed;
+
+            // Clone the given material before using.
+            _material = new Material(_material);
+            _material.name += " (cloned)";
 
             // Slightly expand the bounding box.
             _bounds = _pointSource.bounds;
             _bounds.Expand(_bounds.extents * 0.25f);
         }
 
-        void OnDisable()
+        void OnDestroy()
         {
             _drawArgsBuffer.Release();
             _positionBuffer.Release();
             _normalBuffer.Release();
             _tangentBuffer.Release();
             _transformBuffer.Release();
+            Destroy(_material);
         }
 
         void Update()
         {
-            // Move the noise field.
-            if (Application.isPlaying)
-                _noiseOffset += _noiseMotion * Time.deltaTime;
-
             // Invoke the update compute kernel.
             var kernel = _compute.FindKernel("ClonerUpdate");
 
@@ -221,6 +218,9 @@ namespace Cloner
                 _template, 0, _material, TransformedBounds,
                 _drawArgsBuffer, 0, _props
             );
+
+            // Move the noise field.
+            _noiseOffset += _noiseMotion * Time.deltaTime;
         }
 
         #endregion
