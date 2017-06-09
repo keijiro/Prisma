@@ -7187,6 +7187,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900916905}
+--- !u!1 &1925739316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1925739318}
+  - component: {fileID: 1925739317}
+  m_Layer: 0
+  m_Name: Noise Ball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1925739317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925739316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ac5389ce9bad34f977b01c52ba1d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triangleCount: 64
+  _triangleExtent: 0.05
+  _shuffleSpeed: 6
+  _noiseAmplitude: 2.5
+  _noiseFrequency: 4
+  _noiseMotion: {x: 0, y: 0, z: 1.6}
+  _material: {fileID: 2100000, guid: 38665ff4c53710f4e99edec4b34f732d, type: 2}
+  _compute: {fileID: 7200000, guid: c46e9a9e0802be04c9441ea4e5c75e51, type: 3}
+--- !u!4 &1925739318
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925739316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928937050
 GameObject:
   m_ObjectHideFlags: 0
