@@ -40,7 +40,7 @@ namespace Prisma
         public void ChangeColor()
         {
             _light.color = Color.HSVToRGB(Random.value, _saturation, 1);
-            _light.color *= 1 + _saturation / 3;
+            _light.color *= 1 + _saturation / 2;
             _boost = -1;
         }
 
