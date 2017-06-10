@@ -40,6 +40,13 @@ namespace Cloner
             set { _scaleByNoise = value; }
         }
 
+        [SerializeField] float _scaleByPulse = 0.1f;
+
+        public float scaleByPulse {
+            get { return _scaleByPulse; }
+            set { _scaleByPulse = value; }
+        }
+
         #endregion
 
         #region Noise field properties
@@ -63,6 +70,24 @@ namespace Cloner
         public float normalModifier {
             get { return _normalModifier; }
             set { _normalModifier = value; }
+        }
+
+        #endregion
+
+        #region Pulse noise properties
+
+        [SerializeField, Range(0, 0.1f)] float _pulseProbability = 0;
+
+        public float pulseProbability {
+            get { return _pulseProbability; }
+            set { _pulseProbability = value; }
+        }
+
+        [SerializeField] float _pulseFrequency = 2;
+
+        public float pulseFrequency {
+            get { return _pulseFrequency; }
+            set { _pulseFrequency = value; }
         }
 
         #endregion
@@ -110,6 +135,7 @@ namespace Cloner
         MaterialPropertyBlock _props;
         Bounds _bounds;
         Vector3 _noiseOffset;
+        float _pulseTimer;
 
         Bounds TransformedBounds {
             get {
@@ -159,8 +185,9 @@ namespace Cloner
             _props = new MaterialPropertyBlock();
             _props.SetFloat("_UniqueID", Random.value);
 
-            // Initial noise offset = random seed
+            // Initial noise offset/pulse timer = random seed
             _noiseOffset = Vector3.one * _randomSeed;
+            _pulseTimer = _pulseFrequency * _randomSeed;
 
             // Clone the given material before using.
             _material = new Material(_material);
@@ -187,11 +214,18 @@ namespace Cloner
             var kernel = _compute.FindKernel("ClonerUpdate");
 
             _compute.SetInt("InstanceCount", InstanceCount);
+            _compute.SetFloat("RcpInstanceCount", 1.0f / InstanceCount);
+
             _compute.SetFloat("BaseScale", _templateScale);
             _compute.SetFloat("ScaleNoise", _scaleByNoise);
+            _compute.SetFloat("ScalePulse", _scaleByPulse);
+
             _compute.SetFloat("NoiseFrequency", _noiseFrequency);
             _compute.SetVector("NoiseOffset", _noiseOffset);
             _compute.SetFloat("NormalModifier", _normalModifier);
+
+            _compute.SetFloat("PulseProbability", _pulseProbability);
+            _compute.SetFloat("PulseTime", _pulseTimer);
 
             _compute.SetBuffer(kernel, "PositionBuffer", _positionBuffer);
             _compute.SetBuffer(kernel, "NormalBuffer", _normalBuffer);
@@ -201,8 +235,6 @@ namespace Cloner
             _compute.Dispatch(kernel, ThreadGroupCount, 1, 1);
 
             // Draw the template mesh with instancing.
-            _material.SetFloat("_RandomSeed", _randomSeed);
-
             _material.SetVector("_GradientA", _gradient.coeffsA);
             _material.SetVector("_GradientB", _gradient.coeffsB);
             _material.SetVector("_GradientC", _gradient.coeffsC2);
@@ -211,16 +243,17 @@ namespace Cloner
             _material.SetMatrix("_LocalToWorld", transform.localToWorldMatrix);
             _material.SetMatrix("_WorldToLocal", transform.worldToLocalMatrix);
 
-            _material.SetInt("_InstanceCount", InstanceCount);
             _material.SetBuffer("_TransformBuffer", _transformBuffer);
+            _material.SetInt("_InstanceCount", InstanceCount);
 
             Graphics.DrawMeshInstancedIndirect(
                 _template, 0, _material, TransformedBounds,
                 _drawArgsBuffer, 0, _props
             );
 
-            // Move the noise field.
+            // Update the internal state.
             _noiseOffset += _noiseMotion * Time.deltaTime;
+            _pulseTimer += _pulseFrequency * Time.deltaTime;
         }
 
         #endregion

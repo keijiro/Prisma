@@ -12,13 +12,39 @@ StructuredBuffer<float4> TangentBuffer;
 RWStructuredBuffer<float4> TransformBuffer;
 
 CBUFFER_START(Params)
+
     uint InstanceCount;
+    float RcpInstanceCount;
+
     float BaseScale;
     float ScaleNoise;
+    float ScalePulse;
+
     float NoiseFrequency;
     float3 NoiseOffset;
     float NormalModifier;
+
+    float PulseProbability;
+    float PulseTime;
+
 CBUFFER_END
+
+// Hash function from H. Schechter & R. Bridson, goo.gl/RXiKaH
+float Hash(uint s)
+{
+    s ^= 2747636419u;
+    s *= 2654435769u;
+    s ^= s >> 16;
+    s *= 2654435769u;
+    s ^= s >> 16;
+    s *= 2654435769u;
+    return s;
+}
+
+float Random(uint seed)
+{
+    return float(Hash(seed)) / 4294967295.0; // 2^32-1
+}
 
 [numthreads(64, 1, 1)]
 void ClonerUpdate(uint id : SV_DispatchThreadID)
@@ -27,16 +53,33 @@ void ClonerUpdate(uint id : SV_DispatchThreadID)
     float3 n = NormalBuffer[id].xyz;
     float4 t = TangentBuffer[id];
 
+    // Divergence free noise field.
     float4 sn1 = snoise(98.4898 + p * NoiseFrequency + NoiseOffset);
     float4 sn2 = snoise( 1.2278 - p * NoiseFrequency + NoiseOffset);
     float3 dfn = cross(sn1.xyz, sn2.xyz);
 
-    float3 rz = normalize(n + dfn * NormalModifier);
-    float3 ry = normalize(cross(rz, t.xyz) * t.w);
-    float3 rx = cross(rz, ry);
-    float s = max(0, BaseScale + sn1.w * ScaleNoise);
+    // Normal modification.
+    float3 nz = normalize(n + dfn * NormalModifier);
+    float3 ny = normalize(cross(nz, t.xyz) * t.w);
+    float3 nx = cross(nz, ny);
 
-    TransformBuffer[id + InstanceCount * 0] = float4(p, s);
-    TransformBuffer[id + InstanceCount * 1] = float4(rx, sn1.w);
-    TransformBuffer[id + InstanceCount * 2] = float4(ry, sn2.w);
+    // UV offsetting.
+    uint hash = Hash(id);
+    float uoffs = float(hash & 0xfff000) / 0x1000000;
+    float voffs = float(hash & 0x000fff) / 0x0001000;
+    float uvoffs = uoffs + floor(voffs * 1000);
+
+    // Pulse noise.
+    float ptime = PulseTime + id * RcpInstanceCount;
+    uint seed = id * 131071 + (uint)ptime;
+    float pulse0 = Random(seed + 0) < PulseProbability;
+    float pulse1 = Random(seed + 1) < PulseProbability;
+    float pulse = lerp(pulse0, pulse1, smoothstep(0, 1, frac(ptime)));
+
+    // Scale factor.
+    float scale = max(0, BaseScale + sn1.w * ScaleNoise) + pulse * ScalePulse;
+
+    TransformBuffer[id + InstanceCount * 0] = float4(p, scale);
+    TransformBuffer[id + InstanceCount * 1] = float4(nx, uvoffs);
+    TransformBuffer[id + InstanceCount * 2] = float4(ny, sn2.w);
 }

@@ -15,10 +15,14 @@ namespace Cloner
         SerializedProperty _template;
         SerializedProperty _templateScale;
         SerializedProperty _scaleByNoise;
+        SerializedProperty _scaleByPulse;
 
         SerializedProperty _noiseFrequency;
         SerializedProperty _noiseMotion;
         SerializedProperty _normalModifier;
+
+        SerializedProperty _pulseProbability;
+        SerializedProperty _pulseFrequency;
 
         SerializedProperty _material;
         SerializedProperty _gradient;
@@ -29,6 +33,7 @@ namespace Cloner
         {
             public static GUIContent frequency = new GUIContent("Frequency");
             public static GUIContent motion = new GUIContent("Motion");
+            public static GUIContent probability = new GUIContent("Probability");
             public static GUIContent scale = new GUIContent("Scale");
         }
 
@@ -39,10 +44,14 @@ namespace Cloner
             _template = serializedObject.FindProperty("_template");
             _templateScale = serializedObject.FindProperty("_templateScale");
             _scaleByNoise = serializedObject.FindProperty("_scaleByNoise");
+            _scaleByPulse = serializedObject.FindProperty("_scaleByPulse");
 
             _noiseFrequency = serializedObject.FindProperty("_noiseFrequency");
             _noiseMotion = serializedObject.FindProperty("_noiseMotion");
             _normalModifier = serializedObject.FindProperty("_normalModifier");
+
+            _pulseProbability = serializedObject.FindProperty("_pulseProbability");
+            _pulseFrequency = serializedObject.FindProperty("_pulseFrequency");
 
             _material = serializedObject.FindProperty("_material");
             _gradient = serializedObject.FindProperty("_gradient");
@@ -60,6 +69,7 @@ namespace Cloner
             EditorGUI.indentLevel++;
             EditorGUILayout.PropertyField(_templateScale, Labels.scale);
             EditorGUILayout.PropertyField(_scaleByNoise);
+            EditorGUILayout.PropertyField(_scaleByPulse);
             EditorGUI.indentLevel--;
 
             EditorGUILayout.LabelField("Noise Field");
@@ -68,6 +78,12 @@ namespace Cloner
             EditorGUILayout.PropertyField(_noiseMotion, Labels.motion);
             EditorGUI.indentLevel--;
             EditorGUILayout.PropertyField(_normalModifier);
+
+            EditorGUILayout.LabelField("Pulse Noise");
+            EditorGUI.indentLevel++;
+            EditorGUILayout.PropertyField(_pulseProbability, Labels.probability);
+            EditorGUILayout.PropertyField(_pulseFrequency, Labels.frequency);
+            EditorGUI.indentLevel--;
 
             EditorGUILayout.PropertyField(_material);
             EditorGUILayout.PropertyField(_gradient);

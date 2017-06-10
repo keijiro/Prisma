@@ -18,14 +18,14 @@ Shader "Cloner/Surface"
 
         CGPROGRAM
 
-        #pragma surface surf Standard vertex:vert addshadow
+        #pragma surface surf Standard vertex:vert addshadow nolightmap
         #pragma instancing_options procedural:setup
         #pragma target 4.0
 
         struct Input
         {
             float2 uv_MainTex;
-            float GradientParam : COLOR;
+            half4 Color : COLOR;
         };
 
         sampler2D _MainTex;
@@ -36,8 +36,6 @@ Shader "Cloner/Surface"
         sampler2D _NormalMap;
         half _NormalScale;
 
-        int _RandomSeed;
-
         half3 _GradientA;
         half3 _GradientB;
         half3 _GradientC;
@@ -47,16 +45,11 @@ Shader "Cloner/Surface"
         float4x4 _WorldToLocal;
 
         #ifdef UNITY_PROCEDURAL_INSTANCING_ENABLED
+
         StructuredBuffer<float4> _TransformBuffer;
         uint _InstanceCount;
-        #endif
 
-        float Random(float u, float v)
-        {
-            v += _RandomSeed * 30.4953;
-            float f = dot(float2(12.9898, 78.233), float2(u, v));
-            return frac(43758.5453 * sin(f));
-        }
+        #endif
 
         half3 CosineGradient(half param)
         {
@@ -113,30 +106,24 @@ Shader "Cloner/Surface"
             #ifdef UNITY_PROCEDURAL_INSTANCING_ENABLED
 
             uint id = unity_InstanceID;
-            v.color = 0.5 + _TransformBuffer[id + _InstanceCount * 2].w;
+
+            float duv = _TransformBuffer[id + _InstanceCount * 1].w;
+            float sn2 = _TransformBuffer[id + _InstanceCount * 2].w;
+
+            v.texcoord.x += frac(duv);
+            v.texcoord.y += floor(duv) / 1000;
+
+            v.color = half4(CosineGradient(sn2 + 0.5), 1);
 
             #endif
         }
 
-        void surf (Input IN, inout SurfaceOutputStandard o)
+        void surf(Input IN, inout SurfaceOutputStandard o)
         {
             float2 uv = IN.uv_MainTex;
-
-            #ifdef UNITY_PROCEDURAL_INSTANCING_ENABLED
-
-            uint id = unity_InstanceID;
-            uv.x += Random(id * 0.0001, 0.2741);
-            uv.y += Random(0.3179, id * 0.0001);
-
-            #endif
-
-            half3 c = tex2D(_MainTex, uv).rgb * _Color.rgb;
-            c *= CosineGradient(IN.GradientParam);
-
-            o.Albedo = c;
+            o.Albedo = tex2D(_MainTex, uv).rgb * _Color.rgb * IN.Color.rgb;
             o.Metallic = _Metallic;
             o.Smoothness = _Smoothness;
-
             o.Normal = UnpackScaleNormal(tex2D(_NormalMap, uv), _NormalScale);
         }
 
