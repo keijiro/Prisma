@@ -18,7 +18,7 @@ Shader "Cloner/Surface"
 
         CGPROGRAM
 
-        #pragma surface surf Standard vertex:vert addshadow nolightmap
+        #pragma surface surf Standard vertex:vert addshadow nolightmap nolppv
         #pragma instancing_options procedural:setup
         #pragma target 4.0
 
