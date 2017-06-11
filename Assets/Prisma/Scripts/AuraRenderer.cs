@@ -150,6 +150,12 @@ namespace Prisma
 
             _compute.Dispatch(kernel, ThreadGroupCount, 1, 1);
 
+            // Move the noise field.
+            _noiseOffset += _noiseMotion * Time.deltaTime;
+        }
+
+        void LateUpdate()
+        {
             // Draw the mesh with instancing.
             _material.SetMatrix("_LocalToWorld", transform.localToWorldMatrix);
             _material.SetMatrix("_WorldToLocal", transform.worldToLocalMatrix);
@@ -162,9 +168,6 @@ namespace Prisma
                 new Bounds(transform.position, transform.lossyScale * 5),
                 _drawArgsBuffer, 0, _props
             );
-
-            // Move the noise field.
-            _noiseOffset += _noiseMotion * Time.deltaTime;
         }
 
         #endregion

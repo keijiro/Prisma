@@ -10,12 +10,18 @@ namespace Prisma
 
         [SerializeField, Range(0, 1)] float _saturation = 0.5f;
         [SerializeField, Range(0, 2)] float _noiseAmplitude = 1;
+        [SerializeField] float _boostAmplitude = 10;
         [SerializeField] float _flashFrequency = 1;
-        [SerializeField] float _flashStrength = 10;
+        [SerializeField] ParticleSystem _linkedParticleSystem;
 
         #endregion
 
         #region Public interface
+
+        public float intensity {
+            get { return _intensity; }
+            set { _intensity = value; }
+        }
 
         public float saturation {
             get { return _saturation; }
@@ -27,27 +33,42 @@ namespace Prisma
             set { _noiseAmplitude = value; }
         }
 
+        public float boostAmplitude {
+            get { return _boostAmplitude; }
+            set { _boostAmplitude = value; }
+        }
+
         public float flashFrequency {
             get { return _flashFrequency; }
             set { _flashFrequency = value; }
         }
 
-        public float flashStrength {
-            get { return _flashStrength; }
-            set { _flashStrength = value; }
+        public void KickBoost()
+        {
+            _boost = -1;
         }
 
-        public void ChangeColor()
+        public void ChangeColor(Color color)
         {
-            _light.color = Color.HSVToRGB(Random.value, _saturation, 1);
-            _light.color *= 1 + _saturation / 2;
-            _boost = -1;
+            _light.color = color;
+
+            if (_linkedParticleSystem != null)
+            {
+                var main = _linkedParticleSystem.main;
+                main.startColor = color;
+            }
+        }
+
+        public void RandomizeColor()
+        {
+            ChangeColor(Color.HSVToRGB(Random.value, _saturation, 1));
+            KickBoost();
         }
 
         public void ResetColor()
         {
-            _light.color = Color.white;
-            _boost = -1;
+            ChangeColor(Color.white);
+            KickBoost();
         }
 
         #endregion
@@ -55,9 +76,16 @@ namespace Prisma
         #region Private members
 
         Light _light;
+
         float _originalIntensity;
+        float _originalEmissionRate;
+
+        float _intensity = 1;
 
         NoiseGenerator _noise = new NoiseGenerator(30) { FractalLevel = 8 };
+
+        // Light boost animation: This variable can be negative that means
+        // single-frame blackout before boosting.
         float _boost;
 
         #endregion
@@ -67,34 +95,49 @@ namespace Prisma
         void Start()
         {
             _light = GetComponent<Light>();
+
             _originalIntensity = _light.intensity;
+
+            if (_linkedParticleSystem != null)
+            {
+                var em = _linkedParticleSystem.emission;
+                _originalEmissionRate = em.rateOverTime.constant;
+            }
         }
 
         void Update()
         {
-            // Update the internal state.
-            _boost = _boost < 0 ? 1 : ETween.Step(_boost, 0, 28);
             _noise.Step();
+            if (_boost >= 0) _boost = ETween.Step(_boost, 0, 28);
         }
 
         void LateUpdate()
         {
-            if (_boost < 0)
-            {
-                // Insert a black frame before flash.
-                _light.intensity = 0;
-            }
-            else
+            float amp = 0;
+
+            if (_boost >= 0)
             {
                 // Base + noise
-                var amp = 1 + _noise.Value(0) * _noiseAmplitude;
+                amp = 1 + _noise.Value(0) * _noiseAmplitude;
 
                 // Flash and boost
                 var flash = Random.value < _flashFrequency * Time.deltaTime;
-                amp += Mathf.Max(_boost, flash ? 1 : 0) * _flashStrength;
+                amp += Mathf.Max(_boost, flash ? 1 : 0) * _boostAmplitude;
+            }
+            else
+            {
+                _boost = 1;
+            }
 
-                // Update the light intensity.
-                _light.intensity = _originalIntensity * amp;
+            // Increase intensity if it's not white.
+            if (_light.color != Color.white) amp *= 1.3f;
+
+            _light.intensity = _originalIntensity * _intensity * amp;
+
+            if (_linkedParticleSystem != null)
+            {
+                var em = _linkedParticleSystem.emission;
+                em.rateOverTime = _originalEmissionRate * _intensity;
             }
         }
 
