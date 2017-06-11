@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54276434dda9c694e85abaf98cdd981d, type: 3}
   m_Name: Spike
   m_EditorClassIdentifier: 
-  _redCoeffs: {x: 1, y: 0, z: 0, w: 0}
-  _greenCoeffs: {x: 0.884, y: 0.607, z: 0.8, w: 0}
-  _blueCoeffs: {x: 0.836, y: 0.454, z: 0.8, w: 0}
+  _redCoeffs: {x: 1, y: 0.863, z: 0.66, w: 0.734}
+  _greenCoeffs: {x: 1, y: 0.915, z: 0.83, w: 0.583}
+  _blueCoeffs: {x: 1, y: 0, z: 0.2, w: 0}
