@@ -12,6 +12,11 @@ namespace Prisma
 
         float _throttle;
 
+        void OnDisable()
+        {
+            foreach (var s in _swarms) s.enabled = false;
+        }
+
         void LateUpdate()
         {
             if (_throttle < 0.01f)

@@ -23,6 +23,11 @@ namespace Prisma
             _scaleByPulse = _cloners[0].scaleByPulse;
         }
 
+        void OnDisable()
+        {
+            foreach (var c in _cloners) c.enabled = false;
+        }
+
         void LateUpdate()
         {
             if (_throttle < 0.01f)
