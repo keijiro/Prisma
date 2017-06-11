@@ -132,6 +132,7 @@ namespace Cloner
         ComputeBuffer _normalBuffer;
         ComputeBuffer _tangentBuffer;
         ComputeBuffer _transformBuffer;
+        bool _materialCloned;
         MaterialPropertyBlock _props;
         Bounds _bounds;
         Vector3 _noiseOffset;
@@ -192,6 +193,7 @@ namespace Cloner
             // Clone the given material before using.
             _material = new Material(_material);
             _material.name += " (cloned)";
+            _materialCloned = true;
 
             // Slightly expand the bounding box.
             _bounds = _pointSource.bounds;
@@ -200,12 +202,12 @@ namespace Cloner
 
         void OnDestroy()
         {
-            _drawArgsBuffer.Release();
-            _positionBuffer.Release();
-            _normalBuffer.Release();
-            _tangentBuffer.Release();
-            _transformBuffer.Release();
-            Destroy(_material);
+            if (_drawArgsBuffer != null) _drawArgsBuffer.Release();
+            if (_positionBuffer != null) _positionBuffer.Release();
+            if (_normalBuffer != null) _normalBuffer.Release();
+            if (_tangentBuffer != null) _tangentBuffer.Release();
+            if (_transformBuffer != null) _transformBuffer.Release();
+            if (_materialCloned) Destroy(_material);
         }
 
         void Update()
