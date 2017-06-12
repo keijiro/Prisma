@@ -35,7 +35,8 @@ namespace Prisma
 
         void OnDisable()
         {
-            foreach (var c in _cloners) c.enabled = false;
+            foreach (var c in _cloners)
+                if (c != null) c.enabled = false;
         }
 
         void Update()

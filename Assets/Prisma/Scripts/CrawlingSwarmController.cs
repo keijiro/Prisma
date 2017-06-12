@@ -14,7 +14,8 @@ namespace Prisma
 
         void OnDisable()
         {
-            foreach (var s in _swarms) s.enabled = false;
+            foreach (var s in _swarms)
+                if (s != null) s.enabled = false;
         }
 
         void LateUpdate()
