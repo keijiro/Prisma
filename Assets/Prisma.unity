@@ -4202,7 +4202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 2048
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: a1e00a405f1d59f41a1d17415173c20e, type: 2}
@@ -6340,7 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 768
   _template: {fileID: 11400000, guid: c0c00b345c4a1394bbcee4f57b92d0c4, type: 2}
-  _radius: 0.01
+  _radius: 0.011111111
   _length: 1.4
   _spread: 1.4
   _noiseFrequency: 0.3333
@@ -6404,12 +6404,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: af72a2de4126762418d8710ccb5a6f1a, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
-  _templateScale: 0.03
+  _templateScale: 0.04
   _scaleByNoise: 0.08
   _scaleByPulse: 0.12
-  _noiseFrequency: 0.3
-  _noiseMotion: {x: 0, y: -0.6, z: 0}
-  _normalModifier: 0.1
+  _noiseFrequency: 3
+  _noiseMotion: {x: 0, y: -1, z: 0}
+  _normalModifier: 0.02
   _pulseProbability: 0.005
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
@@ -8152,12 +8152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: af72a2de4126762418d8710ccb5a6f1a, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
-  _templateScale: 0.1
+  _templateScale: 0.3
   _scaleByNoise: 0.4
   _scaleByPulse: 0.3
   _noiseFrequency: 0.8
-  _noiseMotion: {x: 0, y: -0.5, z: 0}
-  _normalModifier: 0.3
+  _noiseMotion: {x: 0, y: -0.5, z: 0.5}
+  _normalModifier: 0.08
   _pulseProbability: 0.005
   _pulseFrequency: 1
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
@@ -10770,7 +10770,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1915288240}
   _minValue: 0
   _maxValue: 1
-  _value: 0
+  _value: 0.5
   _graphic: {fileID: 1915288240}
   _target: {fileID: 855200232}
 --- !u!1 &1094180923
@@ -15970,12 +15970,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: af72a2de4126762418d8710ccb5a6f1a, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
-  _templateScale: 0.1
+  _templateScale: 0.3
   _scaleByNoise: 0.4
   _scaleByPulse: 0.3
   _noiseFrequency: 0.8
-  _noiseMotion: {x: 0, y: -0.5, z: 0}
-  _normalModifier: 0.3
+  _noiseMotion: {x: 0, y: -0.5, z: 0.5}
+  _normalModifier: 0.08
   _pulseProbability: 0.005
   _pulseFrequency: 1
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
@@ -16085,12 +16085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: af72a2de4126762418d8710ccb5a6f1a, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
-  _templateScale: 0.03
+  _templateScale: 0.04
   _scaleByNoise: 0.08
   _scaleByPulse: 0.12
-  _noiseFrequency: 0.3
-  _noiseMotion: {x: 0, y: -0.6, z: 0}
-  _normalModifier: 0.1
+  _noiseFrequency: 3
+  _noiseMotion: {x: 0, y: -1, z: 0}
+  _normalModifier: 0.02
   _pulseProbability: 0.005
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
@@ -16721,7 +16721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 2048
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: a1e00a405f1d59f41a1d17415173c20e, type: 2}
@@ -17237,7 +17237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 768
   _template: {fileID: 11400000, guid: c0c00b345c4a1394bbcee4f57b92d0c4, type: 2}
-  _radius: 0.01
+  _radius: 0.011111111
   _length: 1.4
   _spread: 1.4
   _noiseFrequency: 0.3333
