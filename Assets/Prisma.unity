@@ -604,8 +604,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 474e15313a1c2d1488c8044fa96abeeb, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.02
-  _scaleByNoise: 0.06
-  _scaleByPulse: 0.1
+  _scaleByNoise: 0.1
+  _scaleByPulse: 0.12
   _noiseFrequency: 2
   _noiseMotion: {x: 0, y: 0.25, z: 0}
   _normalModifier: 0.5
@@ -613,7 +613,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 73
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &41908901
 GameObject:
@@ -1008,8 +1008,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 541780ea3abb3a64da6c59ca7227c5ac, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.02
-  _scaleByNoise: 0.06
-  _scaleByPulse: 0.1
+  _scaleByNoise: 0.1
+  _scaleByPulse: 0.12
   _noiseFrequency: 2
   _noiseMotion: {x: 0, y: 0.25, z: 0}
   _normalModifier: 0.5
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 72
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &112253469
 MonoBehaviour:
@@ -2862,8 +2862,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 541780ea3abb3a64da6c59ca7227c5ac, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
   _templateScale: 0
-  _scaleByNoise: 0.01
-  _scaleByPulse: 0.04
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.06
   _noiseFrequency: 10
   _noiseMotion: {x: 0, y: 1, z: 0}
   _normalModifier: 0.05
@@ -2871,7 +2871,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 4
+  _randomSeed: 78
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &330282730
 GameObject:
@@ -4200,7 +4200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96d22c8c7818ec49969122b320a267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceCount: 2048
+  _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
   _radius: 0.004
   _trim: 1
@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: 94f18e8814779284ca90d054214ba0a5, type: 2}
@@ -4925,7 +4925,7 @@ MonoBehaviour:
   _noiseMotion: 0.5
   _material: {fileID: 2100000, guid: 4df5f9416c6409d499c45b25adb1f007, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 4
+  _randomSeed: 81
   _compute: {fileID: 7200000, guid: e579db230e141ad4baa8636ac84ed1ef, type: 3}
 --- !u!1 &524820551
 GameObject:
@@ -5486,8 +5486,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 474e15313a1c2d1488c8044fa96abeeb, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
   _templateScale: 0
-  _scaleByNoise: 0.01
-  _scaleByPulse: 0.04
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.06
   _noiseFrequency: 10
   _noiseMotion: {x: 0, y: 1, z: 0}
   _normalModifier: 0.05
@@ -5495,7 +5495,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 4
+  _randomSeed: 79
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &598615217
 GameObject:
@@ -6161,9 +6161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96d22c8c7818ec49969122b320a267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceCount: 2048
+  _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: 352b5245d61b0544495a606ac2cb12d9, type: 2}
@@ -6173,7 +6173,7 @@ MonoBehaviour:
   _noiseMotion: 0.2
   _material: {fileID: 2100000, guid: 4df5f9416c6409d499c45b25adb1f007, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 48
   _compute: {fileID: 7200000, guid: e579db230e141ad4baa8636ac84ed1ef, type: 3}
 --- !u!114 &680383152
 MonoBehaviour:
@@ -7051,16 +7051,16 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: d2982703da15e4c49bd43654bfe4e437, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.03
-  _scaleByNoise: 0.13
+  _scaleByNoise: 0.14
   _scaleByPulse: 0.1
-  _noiseFrequency: 3
-  _noiseMotion: {x: 0, y: 0.25, z: 0}
-  _normalModifier: 0.954
-  _pulseProbability: 0
-  _pulseFrequency: 2
+  _noiseFrequency: 2
+  _noiseMotion: {x: 0, y: -0.4, z: 0.2}
+  _normalModifier: 0.4
+  _pulseProbability: 0.004
+  _pulseFrequency: 1.11111
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
-  _gradient: {fileID: 11400000, guid: 3b620911dbbd69343b888a4533dcdaf7, type: 2}
-  _randomSeed: 0
+  _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _randomSeed: 45
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &726657054
 MonoBehaviour:
@@ -7831,16 +7831,16 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 91b398a78db610c429dbb0aadcb153ad, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.03
-  _scaleByNoise: 0.13
+  _scaleByNoise: 0.14
   _scaleByPulse: 0.1
-  _noiseFrequency: 3
-  _noiseMotion: {x: 0, y: 0.25, z: 0}
-  _normalModifier: 0.954
-  _pulseProbability: 0
-  _pulseFrequency: 2
+  _noiseFrequency: 2
+  _noiseMotion: {x: 0, y: -0.4, z: 0.2}
+  _normalModifier: 0.4
+  _pulseProbability: 0.004
+  _pulseFrequency: 1.11111
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
-  _gradient: {fileID: 11400000, guid: 3b620911dbbd69343b888a4533dcdaf7, type: 2}
-  _randomSeed: 0
+  _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _randomSeed: 47
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &811981994
 GameObject:
@@ -8841,8 +8841,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 474e15313a1c2d1488c8044fa96abeeb, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.02
-  _scaleByNoise: 0.06
-  _scaleByPulse: 0.1
+  _scaleByNoise: 0.1
+  _scaleByPulse: 0.12
   _noiseFrequency: 2
   _noiseMotion: {x: 0, y: 0.25, z: 0}
   _normalModifier: 0.5
@@ -8850,7 +8850,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 4
+  _randomSeed: 77
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &911842853
 GameObject:
@@ -9124,8 +9124,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 541780ea3abb3a64da6c59ca7227c5ac, type: 2}
   _template: {fileID: 4300010, guid: e6cbd73936f7a694c9d6eaeac9479698, type: 3}
   _templateScale: 0.02
-  _scaleByNoise: 0.06
-  _scaleByPulse: 0.1
+  _scaleByNoise: 0.1
+  _scaleByPulse: 0.12
   _noiseFrequency: 2
   _noiseMotion: {x: 0, y: 0.25, z: 0}
   _normalModifier: 0.5
@@ -9133,7 +9133,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 4
+  _randomSeed: 76
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &932793598
 GameObject:
@@ -9676,7 +9676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: 94f18e8814779284ca90d054214ba0a5, type: 2}
@@ -9686,7 +9686,7 @@ MonoBehaviour:
   _noiseMotion: 0.5
   _material: {fileID: 2100000, guid: 4df5f9416c6409d499c45b25adb1f007, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 80
   _compute: {fileID: 7200000, guid: e579db230e141ad4baa8636ac84ed1ef, type: 3}
 --- !u!114 &1011691860
 MonoBehaviour:
@@ -9744,17 +9744,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: 91b398a78db610c429dbb0aadcb153ad, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
-  _templateScale: 0
-  _scaleByNoise: 0.05
-  _scaleByPulse: 0.1
-  _noiseFrequency: 0.6
-  _noiseMotion: {x: 0, y: 0, z: 0.3}
-  _normalModifier: 0.1
-  _pulseProbability: 0
-  _pulseFrequency: 2
+  _templateScale: 0.01
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.05
+  _noiseFrequency: 1.3
+  _noiseMotion: {x: 0, y: -0.4, z: 0.4}
+  _normalModifier: 0.08
+  _pulseProbability: 0.002
+  _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
-  _gradient: {fileID: 11400000, guid: 3b620911dbbd69343b888a4533dcdaf7, type: 2}
-  _randomSeed: 0
+  _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _randomSeed: 46
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &1019759789
 GameObject:
@@ -11541,8 +11541,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 541780ea3abb3a64da6c59ca7227c5ac, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
   _templateScale: 0
-  _scaleByNoise: 0.01
-  _scaleByPulse: 0.04
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.06
   _noiseFrequency: 10
   _noiseMotion: {x: 0, y: 1, z: 0}
   _normalModifier: 0.05
@@ -11550,7 +11550,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 74
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &1153973812
 MonoBehaviour:
@@ -12330,8 +12330,8 @@ MonoBehaviour:
   _pointSource: {fileID: 11400000, guid: 474e15313a1c2d1488c8044fa96abeeb, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
   _templateScale: 0
-  _scaleByNoise: 0.01
-  _scaleByPulse: 0.04
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.06
   _noiseFrequency: 10
   _noiseMotion: {x: 0, y: 1, z: 0}
   _normalModifier: 0.05
@@ -12339,7 +12339,7 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 75
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &1211016074
 GameObject:
@@ -16652,17 +16652,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointSource: {fileID: 11400000, guid: d2982703da15e4c49bd43654bfe4e437, type: 2}
   _template: {fileID: 4300002, guid: c048c8a9824a9db47899461552258cb9, type: 3}
-  _templateScale: 0
-  _scaleByNoise: 0.05
-  _scaleByPulse: 0.1
-  _noiseFrequency: 0.6
-  _noiseMotion: {x: 0, y: 0, z: 0.3}
-  _normalModifier: 0.1
-  _pulseProbability: 0
-  _pulseFrequency: 2
+  _templateScale: 0.01
+  _scaleByNoise: 0.02
+  _scaleByPulse: 0.05
+  _noiseFrequency: 1.3
+  _noiseMotion: {x: 0, y: -0.4, z: 0.4}
+  _normalModifier: 0.08
+  _pulseProbability: 0.002
+  _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
-  _gradient: {fileID: 11400000, guid: 3b620911dbbd69343b888a4533dcdaf7, type: 2}
-  _randomSeed: 0
+  _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _randomSeed: 44
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &1820302642
 MonoBehaviour:
@@ -16719,7 +16719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96d22c8c7818ec49969122b320a267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceCount: 2048
+  _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
   _radius: 0.004
   _trim: 1
@@ -17138,9 +17138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96d22c8c7818ec49969122b320a267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceCount: 2048
+  _instanceCount: 3072
   _template: {fileID: 11400000, guid: bc5535947189e5f40ba4507d2ecc1efd, type: 2}
-  _radius: 0.006
+  _radius: 0.004
   _trim: 1
   _speed: 0.9
   _volume: {fileID: 11400000, guid: 6704d6b256a1ff14a91623a59ca24efd, type: 2}
@@ -17150,7 +17150,7 @@ MonoBehaviour:
   _noiseMotion: 0.2
   _material: {fileID: 2100000, guid: 4df5f9416c6409d499c45b25adb1f007, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
-  _randomSeed: 0
+  _randomSeed: 49
   _compute: {fileID: 7200000, guid: e579db230e141ad4baa8636ac84ed1ef, type: 3}
 --- !u!1 &1844186070
 GameObject:
