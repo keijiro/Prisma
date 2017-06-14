@@ -27,6 +27,7 @@ namespace Cloner
         SerializedProperty _material;
         SerializedProperty _gradient;
 
+        SerializedProperty _bounds;
         SerializedProperty _randomSeed;
 
         static class Labels
@@ -56,6 +57,7 @@ namespace Cloner
             _material = serializedObject.FindProperty("_material");
             _gradient = serializedObject.FindProperty("_gradient");
 
+            _bounds = serializedObject.FindProperty("_bounds");
             _randomSeed = serializedObject.FindProperty("_randomSeed");
         }
 
@@ -87,6 +89,8 @@ namespace Cloner
 
             EditorGUILayout.PropertyField(_material);
             EditorGUILayout.PropertyField(_gradient);
+
+            EditorGUILayout.PropertyField(_bounds);
             EditorGUILayout.PropertyField(_randomSeed);
 
             serializedObject.ApplyModifiedProperties();

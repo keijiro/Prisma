@@ -506,6 +506,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 73
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &46505022
@@ -840,6 +843,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 72
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &112253469
@@ -2694,6 +2700,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 78
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &330282730
@@ -5579,6 +5588,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 79
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &598615217
@@ -6498,6 +6510,9 @@ MonoBehaviour:
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 2, z: 0}
+    m_Extent: {x: 2, y: 2, z: 2}
   _randomSeed: 5
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &691913311
@@ -7145,6 +7160,9 @@ MonoBehaviour:
   _pulseFrequency: 1.11111
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.7, z: 0}
+    m_Extent: {x: 0.7, y: 0.7, z: 0.7}
   _randomSeed: 45
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &726657054
@@ -7925,6 +7943,9 @@ MonoBehaviour:
   _pulseFrequency: 1.11111
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.7, z: 0}
+    m_Extent: {x: 0.7, y: 0.7, z: 0.7}
   _randomSeed: 47
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &811981994
@@ -8338,6 +8359,9 @@ MonoBehaviour:
   _pulseFrequency: 1
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 2, z: 0}
+    m_Extent: {x: 2, y: 2, z: 2}
   _randomSeed: 1
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &833565843
@@ -9174,6 +9198,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 77
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &911842853
@@ -9457,6 +9484,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 76
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &932793598
@@ -10152,6 +10182,9 @@ MonoBehaviour:
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.7, z: 0}
+    m_Extent: {x: 0.7, y: 0.7, z: 0.7}
   _randomSeed: 46
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &1019759789
@@ -11853,6 +11886,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 74
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &1153973812
@@ -12642,6 +12678,9 @@ MonoBehaviour:
   _pulseFrequency: 2
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: d651ee3c7271bf645b264ff6468e185a, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.26, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
   _randomSeed: 75
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &1211016074
@@ -14660,7 +14699,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.35
+    m_Strength: 1
     m_Bias: 0.01
     m_NormalBias: 0.1
     m_NearPlane: 0.2
@@ -16555,6 +16594,9 @@ MonoBehaviour:
   _pulseFrequency: 1
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 2, z: 0}
+    m_Extent: {x: 2, y: 2, z: 2}
   _randomSeed: 6
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!1 &1699911857
@@ -16670,6 +16712,9 @@ MonoBehaviour:
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 2, z: 0}
+    m_Extent: {x: 2, y: 2, z: 2}
   _randomSeed: 0
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &1715255985
@@ -17273,6 +17318,9 @@ MonoBehaviour:
   _pulseFrequency: 3
   _material: {fileID: 2100000, guid: af23b3746403da141b6274cfa552d084, type: 2}
   _gradient: {fileID: 11400000, guid: 3f7a16a167f35224196a138b665daa7d, type: 2}
+  _bounds:
+    m_Center: {x: 0, y: 0.7, z: 0}
+    m_Extent: {x: 0.7, y: 0.7, z: 0.7}
   _randomSeed: 44
   _compute: {fileID: 7200000, guid: 38648807cddccb549bd3e872d8442617, type: 3}
 --- !u!114 &1820302642

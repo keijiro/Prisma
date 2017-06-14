@@ -65,8 +65,8 @@ Shader "Cloner/Surface"
 
             // Retrieve a transformation from TransformBuffer.
             float4 ps = _TransformBuffer[id + _InstanceCount * 0];
-            float3 bx = _TransformBuffer[id + _InstanceCount * 1];
-            float3 by = _TransformBuffer[id + _InstanceCount * 2];
+            float3 bx = _TransformBuffer[id + _InstanceCount * 1].xyz;
+            float3 by = _TransformBuffer[id + _InstanceCount * 2].xyz;
             float3 bz = cross(bx, by);
 
             // Object to world matrix.
