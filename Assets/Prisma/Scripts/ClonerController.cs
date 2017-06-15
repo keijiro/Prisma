@@ -54,8 +54,8 @@ namespace Prisma
             {
                 foreach (var c in _cloners)
                 {
-                    var noise = _noise.Value(0) * _noiseAmplitude * 2;
-                    var amp = Mathf.Max(_throttle + noise) * 2;
+                    var noise = _noise.Value(0) * _noiseAmplitude * 1.5f;
+                    var amp = Mathf.Max(0, _throttle * (1 + noise)) * 2;
                     c.enabled = true;
                     c.templateScale = _templateScale * amp;
                     c.scaleByNoise = _scaleByNoise * amp;
