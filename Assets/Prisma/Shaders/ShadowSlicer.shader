@@ -17,17 +17,17 @@ Shader "Hidden/Prisma/ShadowSlicer"
 
             CGPROGRAM
 
-            #pragma vertex vert
-            #pragma fragment frag
+            #pragma vertex Vert
+            #pragma fragment Frag
 
             #include "UnityCG.cginc"
 
-            float4 vert(float4 vertex : POSITION) : SV_POSITION
+            float4 Vert(float4 position : POSITION) : SV_POSITION
             {
-                return float4(vertex.xy * float2(2, -2), 0, 1);
+                return float4(position.xy * float2(2, -2), 0, 1);
             }
 
-            fixed4 frag() : SV_Target
+            fixed4 Frag() : SV_Target
             {
                 return 0;
             }
@@ -45,8 +45,8 @@ Shader "Hidden/Prisma/ShadowSlicer"
 
             CGPROGRAM
 
-            #pragma vertex vert
-            #pragma fragment frag
+            #pragma vertex Vert
+            #pragma fragment Frag
 
             #pragma multi_compile_fwdadd_fullshadows
             #pragma skip_variants DIRECTIONAL SHADOWS_SCREEN POINT_COOKIE DIRECTIONAL_COOKIE
@@ -57,23 +57,33 @@ Shader "Hidden/Prisma/ShadowSlicer"
 
             fixed4 _Color;
 
-            struct v2f
+            struct Attributes
             {
-                float4 vertex : SV_POSITION;
-                float3 worldPos : TEXCOORD0;
+                float4 position : POSITION;
+                float3 normal : NORMAL;
             };
 
-            v2f vert(float4 vertex : POSITION)
+            struct Varyings
             {
-                v2f o;
-                o.vertex = float4(vertex.xy * float2(2, -2), 0, 1);
-                o.worldPos = mul(unity_ObjectToWorld, vertex).xyz;
+                float4 position : SV_POSITION;
+                float3 worldPosition : TEXCOORD0;
+                float3 worldNormal : TEXCOORD1;
+            };
+
+            Varyings Vert(Attributes input)
+            {
+                Varyings o;
+                o.position = float4(input.position.xy * float2(2, -2), 0, 1);
+                o.worldPosition = mul(unity_ObjectToWorld, input.position).xyz;
+                o.worldNormal = UnityObjectToWorldNormal(input.normal);
                 return o;
             }
 
-            half4 frag(v2f IN) : SV_Target
+            half4 Frag(Varyings input) : SV_Target
             {
-                UNITY_LIGHT_ATTENUATION(atten, IN, IN.worldPos)
+                float3 lightDir = UnityWorldSpaceLightDir(input.worldPosition);
+                UNITY_LIGHT_ATTENUATION(atten, input, input.worldPosition)
+                atten *= dot(normalize(lightDir), input.worldNormal);
                 return half4(_Color.rgb * _LightColor0.rgb * atten, 1);
             }
 
