@@ -29,7 +29,7 @@ System Requirements
 - Unity 5.6 or later
 
 *Prisma* uses the special graphics features listed below. These features
-should be supported with the target platform.
+should be supported on the target platform.
 
 - [Compute shader]
 - [Random Write Target]
