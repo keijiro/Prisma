@@ -5677,8 +5677,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _interpolator:
-    _interpolationType: 0
-    _interpolationSpeed: 10
+    _interpolationType: 2
+    _interpolationSpeed: 30
   _amplitude: 1
   _bias: 0
   _outputEvent:
@@ -12434,8 +12434,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _interpolator:
-    _interpolationType: 0
-    _interpolationSpeed: 10
+    _interpolationType: 2
+    _interpolationSpeed: 30
   _amplitude: 1
   _bias: 0
   _outputEvent:
