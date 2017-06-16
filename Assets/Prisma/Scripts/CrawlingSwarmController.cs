@@ -20,7 +20,7 @@ namespace Prisma
 
         void LateUpdate()
         {
-            if (_throttle < 0.01f)
+            if (_throttle < 0.03f)
             {
                 foreach (var s in _swarms) s.enabled = false;
             }

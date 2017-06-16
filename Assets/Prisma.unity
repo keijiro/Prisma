@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 84, y: 48}
-  _threshold: 0.01
+  _threshold: 0.001
   _delayToOff: 0
   _onEvent:
     m_PersistentCalls:
@@ -6375,7 +6375,7 @@ MonoBehaviour:
   _wiringNodePosition: {x: -228, y: 264}
   _interpolator:
     _interpolationType: 2
-    _interpolationSpeed: 20
+    _interpolationSpeed: 10
   _valueEvent:
     m_PersistentCalls:
       m_Calls:
@@ -11529,18 +11529,18 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 1
+      inSlope: 0.2024871
+      outSlope: 0.2024871
       tangentMode: 0
     - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   _interpolator:
     _interpolationType: 0
     _interpolationSpeed: 10
@@ -19592,7 +19592,7 @@ MonoBehaviour:
   _wiringNodePosition: {x: -120, y: 0}
   _interpolator:
     _interpolationType: 2
-    _interpolationSpeed: 30
+    _interpolationSpeed: 10
   _valueEvent:
     m_PersistentCalls:
       m_Calls:
