@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54276434dda9c694e85abaf98cdd981d, type: 3}
   m_Name: Tube Blue
   m_EditorClassIdentifier: 
-  _redCoeffs: {x: 0.324, y: 0.222, z: 1.03, w: 0.153}
-  _greenCoeffs: {x: 0.408, y: 0.285, z: 0.73, w: 0.293}
-  _blueCoeffs: {x: 0.905, y: 0.192, z: 1, w: 0}
+  _redCoeffs: {x: 0.324, y: 0.143, z: 1.03, w: 0.079}
+  _greenCoeffs: {x: 0.768, y: 0.18, z: 0.83, w: 0.563}
+  _blueCoeffs: {x: 0.605, y: 0.218, z: 0.89, w: 0.079}

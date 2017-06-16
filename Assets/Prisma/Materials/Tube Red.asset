@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Tube Red
   m_EditorClassIdentifier: 
   _redCoeffs: {x: 1, y: 0, z: 0, w: 0}
-  _greenCoeffs: {x: 0.467, y: 0.169, z: 1, w: 0.378}
-  _blueCoeffs: {x: 0.331, y: 0.055, z: 1, w: 0}
+  _greenCoeffs: {x: 0.2, y: 0.095, z: 1.13, w: 0.299}
+  _blueCoeffs: {x: 0.352, y: 0.26, z: 1, w: 0}
