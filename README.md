@@ -2,7 +2,6 @@ Prisma
 ======
 
 ![screenshot](http://i.imgur.com/MIOJhYpm.png)
-![screenshot](http://i.imgur.com/YdLMpDym.png)
 ![screenshot](http://i.imgur.com/G0WeuzIm.png)
 
 **Prisma** is live visual software that was developed for presenting visuals
@@ -23,3 +22,24 @@ details of Shadow Slicer, see the [source code of Shadow Slicer].
 [Pepper's ghost]: https://en.wikipedia.org/wiki/Pepper%27s_ghost
 [Mirage]: https://github.com/keijiro/Mirage
 [source code of Shadow Slicer]: Assets/Prisma/Scripts/ShadowSlicer.cs
+
+System Requirements
+-------------------
+
+- Unity 5.6 or later
+
+*Prisma* uses the special graphics features listed below. These features
+should be supported with the target platform.
+
+- [Compute shader]
+- [Random Write Target]
+- [GPU Instancing]
+
+[Compute Shader]: https://docs.unity3d.com/Manual/ComputeShaders.html
+[Random Write Target]: https://docs.unity3d.com/ScriptReference/Graphics.SetRandomWriteTarget.html
+[GPU Instancing]: https://docs.unity3d.com/Manual/GPUInstancing.html
+
+License
+-------
+
+[MIT](LICENSE.txt)
