@@ -10,6 +10,8 @@ namespace Prisma
 
         [SerializeField, Range(0, 1)] float _saturation = 0.5f;
         [SerializeField, Range(0, 2)] float _noiseAmplitude = 1;
+        [SerializeField] float _noiseFrequency = 30;
+        [SerializeField, Range(1, 10)] int _noiseOctave = 3;
         [SerializeField] float _boostAmplitude = 10;
         [SerializeField] float _flashFrequency = 1;
         [SerializeField] ParticleSystem _linkedParticleSystem;
@@ -31,6 +33,16 @@ namespace Prisma
         public float noiseAmplitude {
             get { return _noiseAmplitude; }
             set { _noiseAmplitude = value; }
+        }
+
+        public float noiseFrequency {
+            get { return _noiseFrequency; }
+            set { _noiseFrequency = value; }
+        }
+
+        public int noiseOctave {
+            get { return _noiseOctave; }
+            set { _noiseOctave = value; }
         }
 
         public float boostAmplitude {
@@ -82,7 +94,7 @@ namespace Prisma
 
         float _intensity = 1;
 
-        NoiseGenerator _noise = new NoiseGenerator(30) { FractalLevel = 8 };
+        NoiseGenerator _noise;
 
         // Light boost animation: This variable can be negative that means
         // single-frame blackout before boosting.
@@ -98,6 +110,11 @@ namespace Prisma
 
             _originalIntensity = _light.intensity;
 
+            _noise = new NoiseGenerator() {
+                Frequency = _noiseFrequency,
+                FractalLevel = _noiseOctave
+            };
+
             if (_linkedParticleSystem != null)
             {
                 var em = _linkedParticleSystem.emission;
@@ -107,6 +124,8 @@ namespace Prisma
 
         void Update()
         {
+            _noise.FractalLevel = _noiseOctave;
+            _noise.Frequency = _noiseFrequency;
             _noise.Step();
             if (_boost >= 0) _boost = ETween.Step(_boost, 0, 28);
         }

@@ -6,6 +6,8 @@ namespace Prisma
     public class ClonerController : MonoBehaviour
     {
         [SerializeField] Cloner.ClonerRenderer[] _cloners;
+        [SerializeField] float _noiseFrequency = 18;
+        [SerializeField, Range(1, 10)] int _noiseOctave = 3;
 
         public float throttle {
             get { return _throttle; }
@@ -17,6 +19,16 @@ namespace Prisma
             set { _noiseAmplitude = value; }
         }
 
+        public float noiseFrequency {
+            get { return _noiseFrequency; }
+            set { _noiseFrequency = value; }
+        }
+
+        public int noiseOctave {
+            get { return _noiseOctave; }
+            set { _noiseOctave = value; }
+        }
+
         float _throttle;
         float _noiseAmplitude;
 
@@ -24,13 +36,18 @@ namespace Prisma
         float _scaleByNoise;
         float _scaleByPulse;
 
-        NoiseGenerator _noise = new NoiseGenerator(18) { FractalLevel = 8 };
+        NoiseGenerator _noise;
 
         void Start()
         {
             _templateScale = _cloners[0].templateScale;
             _scaleByNoise = _cloners[0].scaleByNoise;
             _scaleByPulse = _cloners[0].scaleByPulse;
+
+            _noise = new NoiseGenerator() {
+                Frequency = _noiseFrequency,
+                FractalLevel = _noiseOctave
+            };
         }
 
         void OnDisable()
@@ -41,6 +58,8 @@ namespace Prisma
 
         void Update()
         {
+            _noise.FractalLevel = _noiseOctave;
+            _noise.Frequency = _noiseFrequency;
             _noise.Step();
         }
 

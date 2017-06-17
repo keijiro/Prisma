@@ -829,6 +829,119 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86526109}
+--- !u!1 &107826143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 107826145}
+  - component: {fileID: 107826144}
+  m_Layer: 0
+  m_Name: Float Filter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &107826144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107826143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f12cb6e816d52340928f63f1b02f1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 384, y: -276}
+  _responseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _interpolator:
+    _interpolationType: 0
+    _interpolationSpeed: 10
+  _amplitude: 1.2
+  _bias: 0
+  _outputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 158208595}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1062420757}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003474492}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2021063912}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &107826145
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107826143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1797336771}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108157735
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1104,8 @@ MonoBehaviour:
   - {fileID: 36071642}
   - {fileID: 927341417}
   - {fileID: 910165736}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &126271465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 384, y: -264}
+  _wiringNodePosition: {x: 600, y: -336}
   _target: {fileID: 390130557}
   _propertyName: noiseAmplitude
 --- !u!1 &166284112
@@ -3691,6 +3806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saturation: 0.8
   _noiseAmplitude: 1
+  _noiseFrequency: 21
+  _noiseOctave: 3
   _boostAmplitude: 10
   _flashFrequency: 1
   _linkedParticleSystem: {fileID: 0}
@@ -4162,6 +4279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saturation: 0.8
   _noiseAmplitude: 1
+  _noiseFrequency: 21
+  _noiseOctave: 3
   _boostAmplitude: 10
   _flashFrequency: 1
   _linkedParticleSystem: {fileID: 0}
@@ -4996,7 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12de0eef0a2ebb4c912b4e35ba81f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 168, y: -36}
+  _wiringNodePosition: {x: 168, y: -108}
   _buttonDownEvent:
     m_PersistentCalls:
       m_Calls:
@@ -7849,6 +7968,8 @@ MonoBehaviour:
   _cloners:
   - {fileID: 726657053}
   - {fileID: 803305250}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &731479467
 GameObject:
   m_ObjectHideFlags: 0
@@ -9097,6 +9218,8 @@ MonoBehaviour:
   _cloners:
   - {fileID: 833565842}
   - {fileID: 1696724913}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &834568555
 GameObject:
   m_ObjectHideFlags: 0
@@ -11479,7 +11602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 384, y: -216}
+  _wiringNodePosition: {x: 600, y: -288}
   _target: {fileID: 1448664155}
   _propertyName: noiseAmplitude
 --- !u!1 &1063653158
@@ -12866,6 +12989,8 @@ MonoBehaviour:
   - {fileID: 1208208482}
   - {fileID: 322371672}
   - {fileID: 581445611}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &1162042479
 GameObject:
   m_ObjectHideFlags: 0
@@ -13212,51 +13337,18 @@ MonoBehaviour:
   _valueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 158208595}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1062420757}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2003474492}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2021063912}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1994741868}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 107826144}
         m_MethodName: set_input
         m_Mode: 0
         m_Arguments:
@@ -14834,6 +14926,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saturation: 0.8
   _noiseAmplitude: 1
+  _noiseFrequency: 21
+  _noiseOctave: 3
   _boostAmplitude: 10
   _flashFrequency: 1
   _linkedParticleSystem: {fileID: 0}
@@ -15723,6 +15817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saturation: 0.8
   _noiseAmplitude: 1
+  _noiseFrequency: 21
+  _noiseOctave: 3
   _boostAmplitude: 10
   _flashFrequency: 1
   _linkedParticleSystem: {fileID: 2052875953}
@@ -17844,6 +17940,8 @@ MonoBehaviour:
   _cloners:
   - {fileID: 1715255984}
   - {fileID: 686565457}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &1720313295
 GameObject:
   m_ObjectHideFlags: 0
@@ -18541,6 +18639,7 @@ Transform:
   - {fileID: 1098290236}
   - {fileID: 1994741869}
   - {fileID: 495373810}
+  - {fileID: 107826145}
   m_Father: {fileID: 700638605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18776,6 +18875,8 @@ MonoBehaviour:
   _cloners:
   - {fileID: 1820302641}
   - {fileID: 1014661351}
+  _noiseFrequency: 20
+  _noiseOctave: 3
 --- !u!1 &1822468307
 GameObject:
   m_ObjectHideFlags: 0
@@ -18886,7 +18987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 72, y: 264}
-  _threshold: 0.01
+  _threshold: 0.0002
   _delayToOff: 3
   _onEvent:
     m_PersistentCalls:
@@ -21174,7 +21275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 384, y: -168}
+  _wiringNodePosition: {x: 600, y: -240}
   _target: {fileID: 419459428}
   _propertyName: noiseAmplitude
 --- !u!1 &2021063910
@@ -21217,7 +21318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 384, y: -120}
+  _wiringNodePosition: {x: 600, y: -192}
   _target: {fileID: 1360221552}
   _propertyName: noiseAmplitude
 --- !u!1 &2034644706
