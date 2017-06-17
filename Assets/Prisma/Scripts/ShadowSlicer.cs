@@ -29,6 +29,12 @@ namespace Prisma
     // lights are flatten into screen-space shadow masks while rendering, so
     // we can't "slice" these shadows in the later passes).
     //
+    // There is another problem: Unity uses scissoring to exclude unlit areas
+    // from lighting (this reduces pixel shader invocation in forward lighting)
+    // but this introduces unwanted black areas on the wall rendered with
+    // Shadow Slicer. Unfortunately, there is no solution for this problem. I
+    // placed the lights very carefully as avoiding the problem.
+    //
     public class ShadowSlicer : MonoBehaviour
     {
         #region Exposed attributes
