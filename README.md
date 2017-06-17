@@ -32,12 +32,13 @@ System Requirements
 should be supported on the target platform.
 
 - [Compute shader]
-- [Random Write Target]
-- [GPU Instancing]
+- [Random write target] (UAV)
+- [GPU instancing] with [indirect draw]
 
 [Compute Shader]: https://docs.unity3d.com/Manual/ComputeShaders.html
-[Random Write Target]: https://docs.unity3d.com/ScriptReference/Graphics.SetRandomWriteTarget.html
-[GPU Instancing]: https://docs.unity3d.com/Manual/GPUInstancing.html
+[Random write target]: https://docs.unity3d.com/ScriptReference/Graphics.SetRandomWriteTarget.html
+[GPU instancing]: https://docs.unity3d.com/Manual/GPUInstancing.html
+[indirect draw]: https://docs.unity3d.com/ScriptReference/Graphics.DrawMeshInstancedIndirect.html
 
 License
 -------
