@@ -4,6 +4,8 @@ Prisma
 ![screenshot](http://i.imgur.com/MIOJhYpm.png)
 ![screenshot](http://i.imgur.com/G0WeuzIm.png)
 
+![gif](http://i.imgur.com/eBM8Uwm.gif)
+
 **Prisma** is live visual software that was developed for presenting visuals
 in a live performance by [Merzbow] & XXX Residents at DMM VR Theater. It uses
 the big transparent projection screen installed in front of the stage of the
